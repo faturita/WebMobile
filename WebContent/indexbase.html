@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;user-scalable=0;" />
+<link rel="stylesheet" media="screen" href="todolist.css" />
+<link media="only screen and (max-device-width: 320px)" href="smallscreen.css" type=
+"text/css" rel="stylesheet" />
+<link media="only screen and (min-device-width: 321px)" href="largescreen.css" type=
+"text/css" rel="stylesheet" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="todolist.js"></script>
+</head>
+<style type="text/css">
+body {
+	font: 2em Arial;
+}
+</style>
+<body onload="window.scrollTo(0, 1);">
+<h1 class="fancy">Create Task</h1>
+<form id="taskentry" onsubmit="return false;">
+<ul>
+    <li><input type="text" name="task[name]" id="taskname"
+        placeholder="Task Name" /></li>
+    <li><textarea name="task[description]" id="taskdesc"
+        placeholder="Description" rows="5"></textarea></li>
+    <li><input type="text" name="task[due]" id="taskdue"
+        placeholder="Task Due" /></li>
+    <li class="naked"><input type="submit" name="Save" /></li>
+</ul>
+</form>
+</body>
+</html>

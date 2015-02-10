@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximumscale=1.0; user-scalable=0;" />
+    <link rel="stylesheet" href="../jquery.mobile-1.0/jquery.mobile-1.0.min.css" />
+    <script src="../jquery-1.6.4.min.js" ></script>
+    <script src="../jquery.mobile-1.0/jquery.mobile-1.0.min.js" ></script>
+    <script src="../json2.js" ></script>
+    <script src="controller.js" ></script>
+</head>
+<body>
+
+    <!-- Begin: Settings page -->
+    <section id="login" data-role="page">
+        <header data-role="header"><h1>Servicio de Correo</h1></header>
+        <div class="content" data-role="content">
+            <h3>Login</h3>
+            <form id="loginform" action="" method="post">
+            <div data-role="fieldcontain">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" value="">
+                <label for="password">Password:</label>
+                <input type="password" id="password" value="">
+                <input type="button" id="submit" value="Go !">
+                <a id="forget-my-password-button" href="#forget-my-password" >Forgot your password?</a>
+            </div>
+            <div data-role="fieldcontain">
+                <label for="slider">Authentication Level:</label>
+                <input type="range" id="slider" name="slider" min="5" max="50" value="">
+            </div>
+
+            </form>
+        </div>
+        <footer data-role="footer"><h1>Powered By <i>Baufest</i></h1></footer>
+    </section>
+    <!-- End: Preferences page -->
+
+
+    <!-- Begin: Settings page -->
+    <section id="userdata" data-role="page">
+        <header data-role="header"><h1>Servicio de Correo</h1></header>
+        <div class="content" data-role="content">
+            <h3>Personal Data</h3>
+            <form id="loginform" action="" method="post">
+            <div data-role="fieldcontain">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <label for="username">User Name:</label>
+                    <input type="text" id="username" value="">
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" value="">
+                </div>
+                <div data-role="controlgroup" data-type="horizontal">
+                    <label for="securityquestion">Security Question:</label>
+                    <input type="text" id="securityquestion" value="">
+                    <label for="securityresponse">Security Response:</label>
+                    <input type="text" id="securityresponse" value="">
+                </div>
+            </div>
+            <div data-role="controlgroup" data-type="horizontal">
+                <a href="#" id="save" data-role="button">Save</a>
+                <a href="#change-password" data-role="button">Change Password</a>
+                <a href="#login" data-role="button">Logout</a>
+            </div>
+
+            </form>
+        </div>
+        <footer data-role="footer"><h1>Powered By <i>Baufest</i></h1></footer>
+    </section>
+    <!-- End: Preferences page -->
+    
+    
+    <!-- Begin: Forget My password -->
+    <section id="change-password" data-role="page">
+        <header data-role="header"><h1>Servicio de Correo</h1></header>
+        <div class="content" data-role="content">
+            <h3>Change Password</h3>
+            <form id="changepassword" action="" method="post">
+            <div data-role="fieldcontain">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" value="">
+                <label for="password">Old Password:</label>
+                <input type="password" id="password" value="">
+                <label for="newpassword1">New Password:</label>
+                <input type="password" id="newpassword1" value="">
+                <label for="newpassword2">Repeat Password:</label>
+                <input type="password" id="newpassword2" value="">  
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a id="change-password-button" href="#" data-role="button">Confirm</a>   
+                    <a id="cancel" href="#userdata" data-role="button">Cancel</a>     
+                </div>                     
+            </div>
+
+            </form>
+        </div>
+        <footer data-role="footer"><h1>Powered By <i>Baufest</i></h1></footer>
+    </section>
+    <!-- End:  -->    
+    
+    
+    <!-- Begin: Forget My password -->
+    <section id="reset-password" data-role="page">
+        <header data-role="header"><h1>Servicio de Correo</h1></header>
+        <div class="content" data-role="content">
+            <h3>Change Password - Recovery</h3>
+            <form id="changepassword" action="" method="post">
+            <div data-role="fieldcontain">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" value="">
+                <label for="newpassword1">New Password:</label>
+                <input type="password" id="newpassword1" value="">
+                <label for="newpassword2">Repeat Password:</label>
+                <input type="password" id="newpassword2" value="">  
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a id="reset-password-button" href="#" data-role="button">Confirm</a>      
+                </div>                     
+            </div>
+
+            </form>
+        </div>
+        <footer data-role="footer"><h1>Powered By <i>Baufest</i></h1></footer>
+    </section>
+    <!-- End:  --> 
+    
+    <!-- Begin: Settings page -->
+    <section id="forget-my-password" data-role="page">
+        <header data-role="header"><h1>Servicio de Correo</h1></header>
+        <div class="content" data-role="content">
+            <h3>Password Recovery</h3>
+            <form id="loginform" action="" method="post">
+            <div data-role="fieldcontain">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <div data-role="controlgroup" data-type="vertical">
+                        <label for="username">User Name:</label>
+                        <input type="text" id="username" value="">
+                        <a href="#" id="fetch" data-role="button" data-inline="true">Fetch</a>
+                    </div>
+                    <label for="securityquestion">Security Question:</label>
+                    <input type="text" id="securityquestion" value="">
+                    <label for="securityresponse">Security Response:</label>
+                    <input type="password" id="securityresponse" value="">
+                    <a href="#" id="password-recovery" data-role="button" data-inline="true">Recover my password</a>
+                </div>                    
+            </div>
+
+            </form>
+        </div>
+        <footer data-role="footer"><h1>Powered By <i>Baufest</i></h1></footer>
+    </section>
+    <!-- End: Preferences page -->
+
+
+</body>
+</html>

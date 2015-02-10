@@ -1,0 +1,15 @@
+{"customers":
+    {"customer":[
+        {"name":"Mr A",
+        "age":"33",
+        "country":"USA",
+        "profile_image_url":"http://192.168.11.21:8080/examples/servlets/execute.gif",
+        "tel":["111111111","9999999999"]},
+        {"name":"Mr B",
+        "age":"22",
+        "country":"USA",
+        "profile_image_url":"http://192.168.11.21:8080/examples/servlets/execute.gif",
+        "tel":["2222222222","44444444"]}
+        ]
+    }
+}

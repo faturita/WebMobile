@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Mobile Application</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximumscale=1.0; user-scalable=0;" />
+    <link rel="stylesheet" href="jquery.mobile-1.0/jquery.mobile-1.0.min.css" />
+    <script src="../jquery-1.6.4.min.js" ></script>
+    <script src="jquery.mobile-1.0/jquery.mobile-1.0.min.js" ></script>
+    <script>
+    function display() {
+     // Show the page loading dialog
+     //$.mobile.pageLoading(false);
+    }
+
+    $(document).ready(function() {
+    	display();
+
+
+        alert('hola');
+        
+        // Disable a button
+        $("#checkbox-french").checkboxradio("disable");
+        // Enable a disabled button
+        $("#checkbox-italian").checkboxradio("enable");
+        // Manually activate a button and refresh its UI state
+        $("#radio-greek").attr("checked", true).checkboxradio("refresh");
+        $("#radio-italian").attr("checked", false).checkboxradio("refresh");
+
+        
+
+
+        var mySlider = $("#slider-music");
+        // Disable a slider
+        mySlider.slider('disable');
+        // Enable a slider
+        //mySlider.slider("enable");
+        // Manually flip a slider and update its UI state
+        // (just flipping it will not automatically update the UI)
+        mySlider[0].selectedIndex = 1;
+        mySlider.slider("refresh");
+
+        mySelect = $("#select-restaurants");
+        // Disable a select menu
+        mySelect.selectmenu("disable");
+        // Enable a select menu
+        mySelect.selectmenu("enable");
+        // Manually open a select menu
+        mySelect.selectmenu("open");
+        // Manually close a select menu
+        mySelect.selectmenu("close");
+        // Manually select an item and refresh the UI state
+        mySelect[0].selectedIndex = 2;
+        mySelect.selectmenu("refresh");
+        // Force a rebuild of the select menu
+        // Useful if you have dynamically added or removed options
+        mySelect.selectmenu("refresh", true);
+
+
+        // Disable a slider
+        $("#slider").slider("disable");
+        // Enable a slider
+        $("#slider").slider("enable");
+        // Manually set a slider's value and refresh the state of the UI
+        $("#slider").val(100).slider("refresh");
+
+        
+        $(":datainput").focus(function(evt) {
+        	display();
+        	});
+
+    });
+
+    </script>
+</head>
+<body>
+    <section id="page1" data-role="page" data-fullscreen="true">
+    <header data-role="header" data-position="fixed"><h1>jQuery Mobile</h1></header>
+        <nav data-role="navbar">
+        <ul>
+            <li><a href="#" class="ui-btn-active">First</a></li>
+            <li><a href="#">Second</a></li>
+            <li><a href="#">Third</a></li>
+            <li><a href="#">Fourth</a></li>
+            <li><a href="#">Fifth</a></li>
+        </ul>
+    </nav> 
+    <div class="content" data-role="content">
+    <p>First page!</p>
+    <p><a href="#page2">Go to the second page!</a></p>
+    <h3>Unordered List</h3>
+    <ul data-role="listview">
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ul>
+    <h3>Ordered List</h3>
+    <ol data-role="listview">
+        <li><a href="#">Item</a></li>
+        <li data-role="divider">Miscellaneous</li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+    </ol>
+    </div>
+    
+    
+    <footer data-role="footer" data-position="fixed"><h1>O'Reilly</h1></footer>
+    </section>
+    
+    <section id="page2" data-role="page">
+    <header data-role="header"><h1>jQuery Mobile</h1></header>
+   
+    <div class="content" data-role="content">
+    <p>Second page!</p>
+    <p><a href="#page3">Page 3</a></p>
+    <p><a href="#page4">Page 4</a></p>
+    <p><a href="#page5">Page 5</a></p>
+    <p><a href="#page6">Page 6</a></p>
+    <p><a href="#page7">Page 7</a></p>
+    <script>
+    $.each( [ 1, 2, 3 ], function() {
+        document.write(this + 1);
+    });
+    </script>
+        <ul data-role="listview">
+        <li>Restaurants
+        <ul>
+        <li>French
+        <ul>
+            <li><a href="lecentral.html">Le Central</a> <a
+                href="reservations.php?restaurant=903">Make
+            Reservations</a></li>
+            <li><a href="bistrovandome.html">Bistro Vandome</a> <a
+                href="reservations.php?restaurant=904">Make
+            Reservations</a></li>
+            <li><a href="antoines.html">Antoine's</a> <a
+                href="reservations.php?restaurant=905">Make
+            Reservations</a></li>
+        </ul>
+        </li>
+        <li>Cajun and Creole
+            <ul>
+                <li>Bayou Bob's</li>
+                <li>Pappadeaux</li>
+                <li>Lucile's</li>
+            </ul>
+            </li>
+            <li>American
+            <ul>
+                <li>Dixon's</li>
+                <li>Vesta Dipping Grill</li>
+                <li>Steuben's</li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+    </ul>
+    </div>
+    <footer data-role="footer"><h1>O'Reilly</h1></footer>
+    </section>
+    
+    <!-- begin third page -->
+    <section id="page3" data-role="page">
+    <header data-role="header"><h1>jQuery Mobile</h1></header>
+    <div data-role="content" class="content">
+    <p>Third page!</p>
+    <h3>Buttons</h3>
+    <a href="#dialog" data-role="button">Link-based button</a>
+    <input id="datainput" type="text" value="enter data" />
+    <p><a href="external.html">Go to external page</a></p>
+    <p><a rel="external" href="layout.html">Reload another page (rel=external)</a></p>
+    <p><a href="#dialog" data-rel="dialog">Dialog !</a></p>
+    </div>
+    <footer data-role="footer"><h1>O'Reilly</h1></footer>
+    </section>
+    <!-- end third page -->
+    
+    <!-- Begin dialog -->
+    <section id="dialog" data-role="page">
+    <header data-role="header"><h1>jQuery Mobile</h1></header>
+    <div data-role="content" class="content">
+    <p>Second page!</p>
+    <h3>Nested List Example</h3>
+
+    </div>
+    <foote data-role="footer"r><h1>O'Reilly</h1></footer>
+    </section>
+    <!-- end second page -->
+
+    <section id="page4" data-role="page">
+    <header data-role="header"><h1>jQuery Mobile</h1></header>
+    <div class="content" data-role="content">
+        <h3>Control Group Buttons</h3>
+        <div data-role="controlgroup">
+            <a href="#" data-role="button">Yes</a>
+            <a href="#" data-role="button">No</a>
+            <a href="#" data-role="button">Cancel</a>
+        </div>
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" data-role="button">Yes</a>
+            <a href="#" data-role="button">No</a>
+            <a href="#" data-role="button">Cancel</a>
+        </div>
+        <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+            <a href="#" data-role="button" data-icon="home" data-iconpos="left">Home</a>
+            <a href="#" data-role="button" data-icon="gear"
+            data-iconpos="left">Configure</a>
+            <a href="#" data-role="button" data-icon="search"
+            data-iconpos="left">Search</a>
+        </div>
+    </div>
+    <footer data-role="footer"><h1>O'Reilly</h1></footer>
+    </section>
+    
+    <section id="page5" data-role="page">
+        <header data-role="header"><h1>jQuery Mobile</h1></header>
+        <div class="content" data-role="content">
+            <h3>Checkboxes and Radio Buttons</h3>
+            <form id="myform" action="formprocessor.php" method="post">
+            <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+            <legend>Filter Restaurants By:</legend>
+            <input type="checkbox" name="checkbox-french" id="checkbox-french">
+            <label for="checkbox-french">French</label>
+            <input type="checkbox" name="checkbox-italian" id="checkbox-italian">
+            <label for="checkbox-italian">Italian</label>
+            <input type="checkbox" name="checkbox-greek" id="checkbox-greek">
+            <label for="checkbox-greek">Greek</label>
+            </fieldset>
+            <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Select a Language:</legend>
+            <input type="radio" name="radio-language" id="radio-french">
+            <label for="radio-french">French</label>
+            <input type="radio" name="radio-language" id="radio-italian"
+            checked="checked">
+            <label for="radio-italian">Italian</label>
+            <input type="radio" name="radio-language" id="radio-greek">
+            <label for="radio-greek">Greek</label>
+            </fieldset>
+            </div>
+            </form>
+            </div>
+        </div>
+        <p>If you want to play with the elements, remember to wait until the page has been initilized....</p>
+        <footer data-role="footer"><h1>O'Reilly</h1></footer>
+    </section>
+    
+    <section id="page6" data-role="page">
+        <header data-role="header"><h1>jQuery Mobile</h1></header>
+        <div class="content" data-role="content">
+        <h3>Checkboxes and Radio Buttons</h3>
+        <form id="myform" action="formprocessor.php" method="post">
+        <div data-role="fieldcontain">
+        <label for="slider-music">Ambient Music</label>
+        <select name="slider-music" id="slider-music" data-role="slider">
+        <option value="on">On</option>
+        <option value="off">Off</option>
+        </select>
+        <label for="search-restaurants">Search Restaurants:</label>
+        <input type="search" name="search-restaurants" id="search-restaurants" />
+        </div>
+        </form>
+        </div>
+        <footer data-role="footer"><h1>O'Reilly</h1></footer>
+
+    </section>
+    
+    <section id="page7" data-role="page">
+        <header data-role="header"><h1>jQuery Mobile</h1></header>
+        <div class="content" data-role="content">
+        <h3>Native Select Menu Demonstration</h3>
+        <form id="myform" action="formprocessor.php" method="post">
+        <div data-role="fieldcontain">
+        <label for="select-restaurants">Select Your Restaurants:</label>
+        <select id="select-restaurants" name="select-restaurants">
+        <option value="lecentral">Le Central</option>
+        <option value="bistrovandome">Bistro Vandome</option>
+        <option value="antoines">Antoine's</option>
+        </select>
+        </div>
+        <div data-role="fieldcontain">
+            <input type="range" id="slider" name="slider" min="0" max="500">
+        </div>
+        </form>
+        </div>
+        <footer data-role="footer"><h1>O'Reilly</h1></footer>
+
+    </section>
+    
+
+</body>
+</html>
